@@ -1,3 +1,15 @@
 body {
     font-family: var(--global-font-main-font);
+
+    &.light-bg {
+        color: var(--global-color-scale-neutral-neutral10);
+    }
+
+    &.dark-bg {
+        color: var(--global-color-scale-neutral-neutral20);
+    }
+}
+
+p {
+    margin-bottom: 0;
 }

@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Design Token Example</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./build/css/styles.css">
 
     <template id="custom-card-template">
@@ -33,19 +35,32 @@
             </select>
         </header>
 
+        <p>Default Card</p>
+
         <custom-card class="card" data-theme="light" data-elevation="flat" data-radius="none">
             <span slot="headline">Headline</span>
             <span slot="copy">Copy</span>
         </custom-card>
 
+        <p>Cards with Content</p>
+        <custom-card class="card" data-theme="light" data-elevation="low" data-radius="small">
+            <span slot="headline">Breaking News!</span>
+            <span slot="copy">A card with small radius & low elevation</span>
+        </custom-card>
+
         <custom-card class="card" data-theme="light" data-elevation="high" data-radius="small">
-            <span slot="headline">New!</span>
-            <span slot="copy">Some copy would go here</span>
+            <span slot="headline">Breaking News!</span>
+            <span slot="copy">A card with small radius & high elevation</span>
         </custom-card>
 
         <custom-card class="card" data-theme="light" data-elevation="low" data-radius="large">
-            <span slot="headline">More New!</span>
-            <span slot="copy">Some copy would go here</span>
+            <span slot="headline">More Breaking News!</span>
+            <span slot="copy">A card with large radius & low elevation</span>
+        </custom-card>
+
+        <custom-card class="card" data-theme="light" data-elevation="high" data-radius="large">
+            <span slot="headline">More Breaking News!</span>
+            <span slot="copy">A card with large radius & high elevation</span>
         </custom-card>
 
     </div>
