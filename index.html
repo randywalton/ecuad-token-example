@@ -10,20 +10,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./build/css/styles.css">
 
-</head>
-<body>
-
     <template id="custom-card-template">
-    
-        <p>This a test, component</p>
-
+        <h2 class="headline">
+            <slot name="headline">Headline</slot>
+        </h2>
+        <p class="copy">
+            <slot name="copy">Copy</slot>
+        </p>
     </template>
 
-    <p class="test">test</p>
+</head>
+<body class="light-bg">
 
-    <p>test</p>
+    <div class="site-layout">
 
-    <custom-card></custom-card>
+        <header id="site-header" class="site-header light">
+            <label for="theme-select">Choose a theme:</label>
+
+            <select name="themes" id="theme-select">
+                <option value="light">Light Theme</option>
+                <option value="dark">Dark Theme</option>
+            </select>
+        </header>
+
+        <custom-card class="card" data-theme="light" data-elevation="flat" data-radius="none">
+            <span slot="headline">Headline</span>
+            <span slot="copy">Copy</span>
+        </custom-card>
+
+        <custom-card class="card" data-theme="light" data-elevation="high" data-radius="small">
+            <span slot="headline">New!</span>
+            <span slot="copy">Some copy would go here</span>
+        </custom-card>
+
+        <custom-card class="card" data-theme="light" data-elevation="low" data-radius="large">
+            <span slot="headline">More New!</span>
+            <span slot="copy">Some copy would go here</span>
+        </custom-card>
+
+    </div>
+
+ 
 
 
     <script src="./build/js/index-min.js"></script>

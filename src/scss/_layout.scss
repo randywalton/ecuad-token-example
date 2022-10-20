@@ -1,0 +1,28 @@
+.site-layout {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem 0;
+
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.site-header {
+    padding: 1rem;
+    text-align: center;
+
+    &.dark {
+        label {
+            color: var(--global-color-scale-neutral-neutral20);
+        }
+    }
+    
+    &.light {
+        label {
+            color: var(--global-color-scale-neutral-neutral10);
+        }
+    }
+}

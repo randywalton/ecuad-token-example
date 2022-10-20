@@ -1,13 +1,39 @@
-body {
-    background-color: var(--global-color-scale-primary-primary60);
+
+
+.dark-bg {
+    background-color: var(--dark-theme-color-surface);
 }
 
-:root {
-    --test1_me: green;
-
-    --nest: var(--test1_me);
+.light-bg {
+    background-color: var(--light-theme-color-surface);
 }
 
-.test {
-    color: var(--nest);
+.emphasis-low {
+    box-shadow: var(--global-elevation-scale-low);
 }
+
+.emphasis-high {
+    box-shadow: var(--global-elevation-scale-high);
+}
+
+
+.radius-small {
+    border-radius: var(--global-radius-scale-small);
+}
+
+.radius-medium {
+    border-radius: var(--global-radius-scale-medium);
+}
+
+.radius-large {
+    border-radius: var(--global-radius-scale-large);
+}
+
+.card {
+    display: block;
+    width: 250px;
+    padding: var(--global-spacing-scale-large);
+}
+
+
+
