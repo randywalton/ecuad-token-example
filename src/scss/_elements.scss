@@ -1,3 +1,13 @@
 body {
-    background-color: var(--test-color);
+    background-color: var(--global-color-scale-primary-primary60);
+}
+
+:root {
+    --test1_me: green;
+
+    --nest: var(--test1_me);
+}
+
+.test {
+    color: var(--nest);
 }
