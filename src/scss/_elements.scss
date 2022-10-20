@@ -1,5 +1,12 @@
 
+//default card style
+.card {
+    display: block;
+    width: 250px;
+    padding: var(--global-spacing-scale-large);
+}
 
+//light - dark bgs
 .dark-bg {
     background-color: var(--dark-theme-color-surface);
 }
@@ -8,6 +15,7 @@
     background-color: var(--light-theme-color-surface);
 }
 
+//shadows
 .emphasis-low {
     box-shadow: var(--global-elevation-scale-low);
 }
@@ -16,7 +24,7 @@
     box-shadow: var(--global-elevation-scale-high);
 }
 
-
+//border radius
 .radius-small {
     border-radius: var(--global-radius-scale-small);
 }
@@ -29,11 +37,6 @@
     border-radius: var(--global-radius-scale-large);
 }
 
-.card {
-    display: block;
-    width: 250px;
-    padding: var(--global-spacing-scale-large);
-}
 
 
 

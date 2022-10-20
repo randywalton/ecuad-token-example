@@ -1,6 +1,7 @@
 body {
     font-family: var(--global-font-main-font);
 
+    //switch between light - dark
     &.light-bg {
         color: var(--global-color-scale-neutral-neutral10);
     }

@@ -3,14 +3,12 @@ import { constructCSSVars } from "./utils/build-styles.js";
 
 document.addEventListener('DOMContentLoaded', (e) => {
 
-
-    // Define the new web component
+    // Define the new web component(s)
     if ('customElements' in window) {
         customElements.define('custom-card', Card);
     }
 
     constructCSSVars();
-
 
     //cache DOM elements
     const themeSelect = document.getElementById('theme-select');
@@ -18,7 +16,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
     const body = document.getElementsByTagName('body')[0];
 
     themeSelect.addEventListener('change' , (e) => {
-        //console.log(cards);
 
         if(e.target.value === 'dark') {
             siteHeader.classList.remove('light');
@@ -49,7 +46,5 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     });
 
-
-    
 
 });

@@ -1,4 +1,4 @@
-// Create our shared stylesheet:
+// Create our component stylesheet:
 const Sheet = new CSSStyleSheet();
 Sheet.replaceSync(
     `
@@ -32,9 +32,5 @@ Sheet.replaceSync(
        
     `
 );
-
-// Apply the stylesheet to a document:
-//document.adoptedStyleSheets = [sheet];
-
 
 export { Sheet }

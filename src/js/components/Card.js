@@ -3,11 +3,10 @@ import { Sheet } from "./CardCss.js";
 class Card extends HTMLElement {
 
 	static get observedAttributes() { 
-		return ['data-theme']; 
+		return ['data-theme']; //track the theme e.g. light / dark
 	}
 
 	constructor() {
-
 		// Always call super first in constructor
 		super();
 		let template = document.getElementById('custom-card-template');
@@ -26,11 +25,11 @@ class Card extends HTMLElement {
 
 	connectedCallback() {
 		//console.log('connected', this.dataset.theme);
-
+		//set styles on load
 		this.updateStyle();
 
+		//listen it the theme is updated with the form input
 		window.addEventListener('cardUpdated', (e) => {
-			//console.log(e.detail.update);
 			this.setAttribute('data-theme', e.detail.update);
 		});
 		
@@ -40,36 +39,41 @@ class Card extends HTMLElement {
 	}
 
 	disconnectedCallback() {
-		console.log('disconnected', this);
+		//console.log('disconnected', this);
 	}
 
 
 	attributeChangedCallback(name, oldValue, newValue) {
-		console.log('Custom square element attributes changed.');
+		//console.log('element attributes changed.');
 		this.updateStyle();
 	}
 
 	updateStyle() {
-		console.log(this.dataset.theme);
+		
 		if (this.dataset.theme === 'light') {
+			//remove dark if present
 			this.headline.classList.remove('dark');
 			this.copy.classList.remove('dark');
 			this.classList.remove('light-bg');
 
+			//add light class styles
 			this.headline.classList.add(this.dataset.theme);
 			this.copy.classList.add(this.dataset.theme);
 			this.classList.add('dark-bg');
 
 		} else {
+			//remove light if present
 			this.headline.classList.remove('light');
 			this.copy.classList.remove('light');
 			this.classList.remove('dark-bg');
 
+			//add dark class styles
 			this.headline.classList.add(this.dataset.theme);
 			this.copy.classList.add(this.dataset.theme);
 			this.classList.add('light-bg');
 		}
 
+		//elevation & radius added, not connected to theme change
 		this.classList.add('emphasis-'+this.dataset.elevation);
 		this.classList.add('radius-'+this.dataset.radius);
 	}
