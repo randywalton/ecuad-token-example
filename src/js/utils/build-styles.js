@@ -22,7 +22,6 @@ function constructCSSVars() {
 constructCSSVars();
 
 
-
 function sortData(data) {
     //define globals vs themes
     let globalData = data.global;
@@ -30,23 +29,23 @@ function sortData(data) {
     let darkData = data['dark-theme'];
 
     //create ref primary css vars
-    for (let key in globalData['color-scale']['primary']) {
+    for (let key in globalData['ref-color-scale']['primary']) {
         primary.push(
-            `--global-color-scale-primary-${key}: ${globalData['color-scale']['primary'][key].value};`
+            `--global-ref-color-scale-primary-${key}: ${globalData['ref-color-scale']['primary'][key].value};`
         );
     }
 
     //create ref neutral css vars
-    for (let key in globalData['color-scale']['neutral']) {
+    for (let key in globalData['ref-color-scale']['neutral']) {
 
         if (key !== 'emphasis-dark-scale') {
             neutral.push(
-                `--global-color-scale-neutral-${key}: ${globalData['color-scale']['neutral'][key].value};`
+                `--global-ref-color-scale-neutral-${key}: ${globalData['ref-color-scale']['neutral'][key].value};`
             );
         } else {
             neutral.push(
-                `--global-color-scale-neutral-${key}-low: ${globalData['color-scale']['neutral'][key]['low'].value};`,
-                `--global-color-scale-neutral-${key}-high: ${globalData['color-scale']['neutral'][key]['high'].value};`
+                `--global-ref-color-scale-neutral-${key}-low: ${globalData['ref-color-scale']['neutral'][key]['low'].value};`,
+                `--global-ref-color-scale-neutral-${key}-high: ${globalData['ref-color-scale']['neutral'][key]['high'].value};`
             );
         }
         
@@ -124,19 +123,19 @@ function sortData(data) {
     }
 
     //create light-theme css vars
-    for (let key in lightData['color']) {
+    for (let key in lightData['color-light']) {
 
         lightTheme.push(
-            `--light-theme-color-${key}: var(--global-${setCSSVarName(lightData['color'][key].value)});`
+            `--light-theme-color-${key}: var(--global-${setCSSVarName(lightData['color-light'][key].value)});`
         );
         
     }
 
     //create dark-theme css vars
-    for (let key in darkData['color']) {
+    for (let key in darkData['color-dark']) {
 
         darkTheme.push(
-            `--dark-theme-color-${key}: var(--global-${setCSSVarName(darkData['color'][key].value)});`
+            `--dark-theme-color-${key}: var(--global-${setCSSVarName(darkData['color-dark'][key].value)});`
         );
         
     }
