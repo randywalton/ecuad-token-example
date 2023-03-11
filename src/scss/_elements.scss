@@ -17,9 +17,10 @@
 
 .color-scale-block {
     width: 100px;
-    position: absolute;
+    position: fixed;
     top: 0;
     height: 100vh;
+    z-index: 999;
     background: linear-gradient(
         var(--global-ref-color-scale-primary-primary60), 
         var(--global-ref-color-scale-primary-primary50),
