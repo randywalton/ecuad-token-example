@@ -15,6 +15,30 @@
     background-color: var(--light-theme-color-surface);
 }
 
+.color-scale-block {
+    width: 100px;
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    background: linear-gradient(
+        var(--global-ref-color-scale-primary-primary60), 
+        var(--global-ref-color-scale-primary-primary50),
+        var(--global-ref-color-scale-primary-primary40),
+        var(--global-ref-color-scale-primary-primary30),
+        var(--global-ref-color-scale-primary-primary20),
+        var(--global-ref-color-scale-primary-primary10)
+    );
+
+    &.left {
+        left: 0;
+    }
+
+    &.right {
+        right: 0;
+    }
+
+}
+
 //shadows
 .emphasis-low {
     box-shadow: var(--global-elevation-scale-low);
