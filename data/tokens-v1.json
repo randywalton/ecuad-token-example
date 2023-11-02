@@ -177,12 +177,19 @@
       "type": "color"
     }
   },
+  "card": {
+    "padding": {
+      "value": "{spacing.large}",
+      "type": "spacing"
+    }
+  },
   "$themes": [],
   "$metadata": {
     "tokenSetOrder": [
       "global",
       "light",
-      "dark"
+      "dark",
+      "card"
     ]
   }
 }
