@@ -12,7 +12,7 @@ Sheet.replaceSync(
             font-family: var(--global-typeface-headline-family);
             font-size: var(--global-typeface-headline-size);
             font-weight: 300;
-            margin-bottom: var(--global-spacing-scale-small);
+            margin-bottom: 0.4rem;
         }
 
         p {
@@ -22,11 +22,11 @@ Sheet.replaceSync(
         }
 
         h2.light, p.light{
-            color: var(--light-theme-color-on-primary);
+            color: var(--light-theme-card-text-color);
         }
 
         h2.dark, p.dark{
-            color: var(--dark-theme-color-on-primary);
+            color: var(--dark-theme-card-text-color);
         }
 
        

@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
             siteHeader.classList.remove('light');
             siteHeader.classList.add('dark');
 
-            body.classList.remove('light-bg');
-            body.classList.add('dark-bg');
+            body.classList.remove('light');
+            body.classList.add('dark');
 
             const cardUpdated = new CustomEvent('cardUpdated', {
                 bubbles: true,
@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
             siteHeader.classList.remove('dark');
             siteHeader.classList.add('light');
 
-            body.classList.remove('dark-bg');
-            body.classList.add('light-bg');
+            body.classList.remove('dark');
+            body.classList.add('light');
 
             const cardUpdated = new CustomEvent('cardUpdated', {
                 bubbles: true,
@@ -63,11 +63,11 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 console.log(data);
                 console.log(data.global);
                 console.log(data.global.refscale.primary);
-                console.log(Object.keys(data.global.refscale.primary.primary10).map(v => ({[v]: {...data[v]}})));
-                console.log(jsonToCssVariables(data.global.refscale.primary, options));
+                //console.log(Object.keys(data.global.refscale.primary.primary10).map(v => ({[v]: {...data[v]}})));
+                //console.log(jsonToCssVariables(data.global.refscale.primary, options));
             });
     }
-    testCSSVars();
+    //testCSSVars();
 
    
 

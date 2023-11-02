@@ -2,17 +2,15 @@
 // Arrays for token sets
 let primary = [];
 let neutral = [];
-let fonts = [];
+let fontSizes = [];
 let typography = [];
-let radius = [];
-let elevation = [];
 let spacing = [];
 let lightTheme = [];
 let darkTheme = [];
 
 function constructCSSVars() {
     //get the token data
-    fetch('../data/tokens.json')
+    fetch('../data/tokens-v1.json')
         .then(res => res.json()) // the .json() method parses the JSON response into a JS object literal
         .then(data => {
             //send the data to be sorted
@@ -25,49 +23,36 @@ constructCSSVars();
 function sortData(data) {
     //define globals vs themes
     let globalData = data.global;
-    let lightData = data['light-theme'];
-    let darkData = data['dark-theme'];
+    let lightData = data.light;
+    let darkData = data.dark;
+   
 
     //create ref primary css vars
-    for (let key in globalData['ref-color-scale']['primary']) {
+    for (let key in globalData['color']['primary']) {
         primary.push(
-            `--global-ref-color-scale-primary-${key}: ${globalData['ref-color-scale']['primary'][key].value};`
+            `--global-color-primary-${key}: ${globalData['color']['primary'][key].value};`
         );
     }
 
     //create ref neutral css vars
-    for (let key in globalData['ref-color-scale']['neutral']) {
+    for (let key in globalData['color']['neutral']) {
 
-        if (key !== 'emphasis-dark-scale') {
-            neutral.push(
-                `--global-ref-color-scale-neutral-${key}: ${globalData['ref-color-scale']['neutral'][key].value};`
-            );
-        } else {
-            neutral.push(
-                `--global-ref-color-scale-neutral-${key}-low: ${globalData['ref-color-scale']['neutral'][key]['low'].value};`,
-                `--global-ref-color-scale-neutral-${key}-high: ${globalData['ref-color-scale']['neutral'][key]['high'].value};`
-            );
-        }
-        
+        neutral.push(`--global-color-neutral-${key}: ${globalData['color']['neutral'][key].value};`);
     }
 
     //create ref fonts css vars
-    for (let key in globalData['font']) {
+    for (let key in globalData['fontSize']) {
 
-        if (key !== 'font-scale') {
-            fonts.push(
-                `--global-font-${key}: ${globalData['font'][key].value}, sans-serif;`
-            );
-        } else {
-            fonts.push(
-                `--global-font-${key}-0: ${globalData['font'][key]['0'].value}px;`,
-                `--global-font-${key}-1: ${globalData['font'][key]['1'].value}px;`,
-                `--global-font-${key}-2: ${globalData['font'][key]['2'].value}px;`,
-                `--global-font-${key}-3: ${globalData['font'][key]['3'].value}px;`
-            );
-            
-        }
-        
+        fontSizes.push(
+            `--global-fontSize-${key}: ${globalData['fontSize'][key].value}px;`
+        );   
+    }
+
+    for (let key in globalData['fontFamilies']) {
+
+        fontSizes.push(
+            `--global-fontFamilies-${key}: ${globalData['fontFamilies'][key].value};`
+        );   
     }
 
     //create typography css vars
@@ -89,53 +74,55 @@ function sortData(data) {
         
     }
 
-    //create ref spacing css vars
-    for (let key in globalData['spacing-scale']) {
+    // //create ref spacing css vars
+    for (let key in globalData['spacing']) {
 
         spacing.push(
-            `--global-spacing-scale-${key}: ${globalData['spacing-scale'][key].value}px;`
+            `--global-spacing-${key}: ${globalData['spacing'][key].value}px;`
         );
         
     }
 
-    //create ref radius css vars
-    for (let key in globalData['radius-scale']) {
+    // //create ref radius css vars
+    // for (let key in globalData['radius-scale']) {
 
-        radius.push(
-            `--global-radius-scale-${key}: ${globalData['radius-scale'][key].value}px;`
-        );
+    //     radius.push(
+    //         `--global-radius-scale-${key}: ${globalData['radius-scale'][key].value}px;`
+    //     );
         
-    }
+    // }
 
-    //create ref elevation css vars
-    for (let key in globalData['elevation-scale']) {
+    // //create ref elevation css vars
+    // for (let key in globalData['elevation-scale']) {
 
-        let x = globalData['elevation-scale'][key].value['x'];
-        let y = globalData['elevation-scale'][key].value['y'];
-        let blur = globalData['elevation-scale'][key].value['blur'];
-        let spread = globalData['elevation-scale'][key].value['spread'];
-        let color = setCSSVarName(globalData['elevation-scale'][key].value['color']);
+    //     let x = globalData['elevation-scale'][key].value['x'];
+    //     let y = globalData['elevation-scale'][key].value['y'];
+    //     let blur = globalData['elevation-scale'][key].value['blur'];
+    //     let spread = globalData['elevation-scale'][key].value['spread'];
+    //     let color = setCSSVarName(globalData['elevation-scale'][key].value['color']);
 
-        elevation.push(
-            `--global-elevation-scale-${key}: ${x}px ${y}px ${blur}px ${spread}px var(--global-${color});`
-        );
+    //     elevation.push(
+    //         `--global-elevation-scale-${key}: ${x}px ${y}px ${blur}px ${spread}px var(--global-${color});`
+    //     );
         
-    }
+    // }
+
+
 
     //create light-theme css vars
-    for (let key in lightData['color-light']) {
+    for (let key in lightData) {
 
         lightTheme.push(
-            `--light-theme-color-${key}: var(--global-${setCSSVarName(lightData['color-light'][key].value)});`
+            `--light-theme-${key}: var(--global-${setCSSVarName(lightData[key].value)});`
         );
         
     }
 
     //create dark-theme css vars
-    for (let key in darkData['color-dark']) {
+    for (let key in darkData) {
 
         darkTheme.push(
-            `--dark-theme-color-${key}: var(--global-${setCSSVarName(darkData['color-dark'][key].value)});`
+            `--dark-theme-${key}: var(--global-${setCSSVarName(darkData[key].value)});`
         );
         
     }
@@ -163,11 +150,9 @@ function createStyleSheet() {
             ${primary.join(' ')}
             ${neutral.join(' ')}
             /* Type */
-            ${fonts.join(' ')}
+            ${fontSizes.join(' ')}
             ${typography.join(' ')}
             /* Scales */
-            ${radius.join(' ')}
-            ${elevation.join(' ')}
             ${spacing.join(' ')}
             /* Themes */
             ${lightTheme.join(' ')}

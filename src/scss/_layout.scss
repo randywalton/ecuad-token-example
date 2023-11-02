@@ -1,3 +1,35 @@
+body {
+    font-family: var(--global-typeface-copy-family);
+
+    //light - dark bgs
+    &.dark {
+        background-color: var(--dark-theme-bg-color);
+        color: var(--dark-theme-text-color);
+
+        .card {
+            padding: var(--dark-theme-padding);
+            background-color: var(--dark-theme-card-bg-color);
+        }
+
+        label {
+            color: var(--dark-theme-text-color);
+        }
+    }
+
+    &.light {
+        background-color: var(--light-theme-bg-color);
+        color: var(--light-theme-text-color);
+        .card {
+
+            padding: var(--light-theme-padding);
+            background-color: var(--light-theme-card-bg-color);
+        }
+        label {
+            color: var(--light-theme-text-color);
+        }
+    }
+}
+
 
 //site layout and header (form input)
 .site-layout {
@@ -17,16 +49,5 @@
     padding: 1rem;
     text-align: center;
 
-    //switch between light - dark
-    &.dark {
-        label {
-            color: var(--global-color-scale-neutral-neutral20);
-        }
-    }
-    
-    &.light {
-        label {
-            color: var(--global-color-scale-neutral-neutral10);
-        }
-    }
+   
 }
