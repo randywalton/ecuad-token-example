@@ -1,6 +1,94 @@
 {
   "global": {
-    "ref-color-scale": {
+    "fontFamilies": {
+      "source-sans-pro": {
+        "value": "Source Sans Pro",
+        "type": "fontFamilies"
+      }
+    },
+    "lineHeights": {
+      "0": {
+        "value": "AUTO",
+        "type": "lineHeights"
+      }
+    },
+    "fontWeights": {
+      "source-sans-pro-0": {
+        "value": "Regular",
+        "type": "fontWeights"
+      }
+    },
+    "fontSize": {
+      "0": {
+        "value": "16",
+        "type": "fontSizes"
+      },
+      "1": {
+        "value": "25",
+        "type": "fontSizes"
+      }
+    },
+    "letterSpacing": {
+      "0": {
+        "value": "0%",
+        "type": "letterSpacing"
+      }
+    },
+    "paragraphSpacing": {
+      "0": {
+        "value": "0",
+        "type": "paragraphSpacing"
+      }
+    },
+    "typeface": {
+      "headline": {
+        "value": {
+          "fontFamily": "{fontFamilies.source-sans-pro}",
+          "fontWeight": "{fontWeights.source-sans-pro-0}",
+          "lineHeight": "{lineHeights.0}",
+          "fontSize": "{fontSize.1}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography"
+      },
+      "copy": {
+        "value": {
+          "fontFamily": "{fontFamilies.source-sans-pro}",
+          "fontWeight": "{fontWeights.source-sans-pro-0}",
+          "lineHeight": "{lineHeights.0}",
+          "fontSize": "{fontSize.0}",
+          "letterSpacing": "{letterSpacing.0}",
+          "paragraphSpacing": "{paragraphSpacing.0}",
+          "paragraphIndent": "{paragraphIndent.0}",
+          "textCase": "{textCase.none}",
+          "textDecoration": "{textDecoration.none}"
+        },
+        "type": "typography"
+      }
+    },
+    "textCase": {
+      "none": {
+        "value": "none",
+        "type": "textCase"
+      }
+    },
+    "textDecoration": {
+      "none": {
+        "value": "none",
+        "type": "textDecoration"
+      }
+    },
+    "paragraphIndent": {
+      "0": {
+        "value": "0px",
+        "type": "dimension"
+      }
+    },
+    "scales": {
       "primary": {
         "primary60": {
           "value": "#580083",
@@ -35,169 +123,21 @@
         "neutral20": {
           "value": "#ffffff",
           "type": "color"
-        },
-        "emphasis-dark-scale": {
-          "low": {
-            "value": "#00000066",
-            "type": "color"
-          },
-          "high": {
-            "value": "#000000b3",
-            "type": "color"
-          }
         }
-      }
-    },
-    "font": {
-      "main-font": {
-        "value": "Source Sans Pro",
-        "type": "fontFamilies"
-      },
-      "font-scale": {
-        "0": {
-          "value": "16",
-          "type": "fontSizes"
-        },
-        "1": {
-          "value": "20",
-          "type": "fontSizes"
-        },
-        "2": {
-          "value": "25",
-          "type": "fontSizes"
-        },
-        "3": {
-          "value": "31",
-          "type": "fontSizes"
-        }
-      }
-    },
-    "typeface": {
-      "headline": {
-        "value": {
-          "fontFamily": "{font.main-font}",
-          "fontSize": "{font.font-scale.2}"
-        },
-        "type": "typography"
-      },
-      "copy": {
-        "value": {
-          "fontFamily": "{font.main-font}",
-          "fontSize": "{font.font-scale.0}"
-        },
-        "type": "typography"
-      }
-    },
-    "radius-scale": {
-      "small": {
-        "value": "4",
-        "type": "borderRadius"
-      },
-      "medium": {
-        "value": "8",
-        "type": "borderRadius"
-      },
-      "large": {
-        "value": "12",
-        "type": "borderRadius"
-      },
-      "xlarge": {
-        "value": "16",
-        "type": "borderRadius"
-      }
-    },
-    "elevation-scale": {
-      "none": {
-        "value": {
-          "x": "0",
-          "y": "0",
-          "blur": "0",
-          "spread": "0",
-          "color": "#000000",
-          "type": "dropShadow"
-        },
-        "type": "boxShadow"
-      },
-      "low": {
-        "value": {
-          "x": "0",
-          "y": "2",
-          "blur": "4",
-          "spread": "0",
-          "color": "{ref-color-scale.neutral.emphasis-dark-scale.low}",
-          "type": "dropShadow"
-        },
-        "type": "boxShadow"
-      },
-      "high": {
-        "value": {
-          "x": "0",
-          "y": "4",
-          "blur": "8",
-          "spread": "0",
-          "color": "{ref-color-scale.neutral.emphasis-dark-scale.high}",
-          "type": "dropShadow"
-        },
-        "type": "boxShadow"
-      }
-    },
-    "spacing-scale": {
-      "xsmall": {
-        "value": "4",
-        "type": "spacing"
-      },
-      "small": {
-        "value": "8",
-        "type": "spacing"
-      },
-      "medium": {
-        "value": "12",
-        "type": "spacing"
-      },
-      "large": {
-        "value": "16",
-        "type": "spacing"
       }
     }
   },
-  "light-theme": {
-    "color-light": {
-      "primary": {
-        "value": "{ref-color-scale.primary.primary50}",
-        "type": "color"
-      },
-      "on-primary": {
-        "value": "{ref-color-scale.neutral.neutral20}",
-        "type": "color"
-      },
-      "surface": {
-        "value": "{ref-color-scale.primary.primary20}",
-        "type": "color"
-      }
-    }
-  },
-  "dark-theme": {
-    "color-dark": {
-      "primary": {
-        "value": "{ref-color-scale.primary.primary20}",
-        "type": "color"
-      },
-      "on-primary": {
-        "value": "{ref-color-scale.neutral.neutral10}",
-        "type": "color"
-      },
-      "surface": {
-        "value": "{ref-color-scale.primary.primary50}",
-        "type": "color"
-      }
+  "Brand": {
+    "primary": {
+      "value": "{ref-scale.primary.primary40}",
+      "type": "color"
     }
   },
   "$themes": [],
   "$metadata": {
     "tokenSetOrder": [
       "global",
-      "light-theme",
-      "dark-theme"
+      "Brand"
     ]
   }
 }
