@@ -157,6 +157,10 @@
     "card-text-color": {
       "value": "{color.neutral.light}",
       "type": "color"
+    },
+    "test": {
+      "value": "{spacing.large}",
+      "type": "spacing"
     }
   },
   "dark": {
