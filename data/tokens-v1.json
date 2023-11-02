@@ -88,39 +88,39 @@
         "type": "dimension"
       }
     },
-    "scales": {
+    "color": {
       "primary": {
-        "primary60": {
-          "value": "#580083",
+        "10": {
+          "value": "#f7e9ff",
           "type": "color"
         },
-        "primary50": {
-          "value": "#8300d2",
-          "type": "color"
-        },
-        "primary40": {
-          "value": "#ac25ff",
-          "type": "color"
-        },
-        "primary30": {
-          "value": "#c567ff",
-          "type": "color"
-        },
-        "primary20": {
+        "20": {
           "value": "#dea8ff",
           "type": "color"
         },
-        "primary10": {
-          "value": "#f7e9ff",
+        "30": {
+          "value": "#c567ff",
+          "type": "color"
+        },
+        "40": {
+          "value": "#ac25ff",
+          "type": "color"
+        },
+        "50": {
+          "value": "#8300d2",
+          "type": "color"
+        },
+        "60": {
+          "value": "#580083",
           "type": "color"
         }
       },
       "neutral": {
-        "neutral-dark": {
+        "dark": {
           "value": "#000000",
           "type": "color"
         },
-        "neutral-light": {
+        "light": {
           "value": "#ffffff",
           "type": "color"
         }
@@ -129,37 +129,37 @@
   },
   "light": {
     "bg-color": {
-      "value": "{scales.primary.primary20}",
+      "value": "{color.primary.20}",
       "type": "color"
     },
     "text-color": {
-      "value": "{scales.neutral.neutral-dark}",
+      "value": "{color.neutral.dark}",
       "type": "color"
     },
     "card-bg-color": {
-      "value": "{scales.primary.primary60}",
+      "value": "{color.primary.60}",
       "type": "color"
     },
     "card-text-color": {
-      "value": "{scales.neutral.neutral-light}",
+      "value": "{color.neutral.light}",
       "type": "color"
     }
   },
   "dark": {
     "bg-color": {
-      "value": "{scales.primary.primary60}",
+      "value": "{color.primary.60}",
       "type": "color"
     },
     "text-color": {
-      "value": "{scales.neutral.neutral-light}",
+      "value": "{color.neutral.light}",
       "type": "color"
     },
     "card-bg-color": {
-      "value": "{scales.primary.primary20}",
+      "value": "{color.primary.20}",
       "type": "color"
     },
     "card-text-color": {
-      "value": "{scales.neutral.neutral-dark}",
+      "value": "{color.neutral.dark}",
       "type": "color"
     }
   },
