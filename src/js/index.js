@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     //cache DOM elements
     const themeSelect = document.getElementById('theme-select');
     const siteHeader = document.getElementById('site-header');
+    const cardContainer = document.getElementById('card_container');
     const body = document.getElementsByTagName('body')[0];
 
     themeSelect.addEventListener('change' , (e) => {
@@ -47,56 +48,66 @@ document.addEventListener('DOMContentLoaded', (e) => {
     });
 
 
+     const cmsPath = 'https://randywalton.ca/ecuad/cms/api/content/items/exampleArticles';
+    const publicKey = 'API-9c67173d397298b9451f535609fb708214598b83';
 
-    const options = {
-        element: ':root',
-        pretty: true
-    }
+    function getStorySubmission() {
+        // fetch('https://randywalton.ca/temp/testing-headless/api/content/item/get/test?token=API-c4f4deeb91424bff8ad440855223d87e1db9a0fd')
+        //     .then(collections => collections.json())
+        //     .then(collections => console.log(collections));
 
 
-    function testCSSVars() {
-        //get the token data
-        fetch('../data/tokens-v1.json')
-            .then(res => res.json()) // the .json() method parses the JSON response into a JS object literal
-            .then(data => {
-                //send the data to be sorted
-                console.log(data);
-                console.log(data.global);
-                console.log(data.global.refscale.primary);
-                //console.log(Object.keys(data.global.refscale.primary.primary10).map(v => ({[v]: {...data[v]}})));
-                //console.log(jsonToCssVariables(data.global.refscale.primary, options));
+            
+
+        fetch(cmsPath, {
+            method: 'GET',
+            headers: {
+                "api-key": publicKey
+            }
+            })
+            .then(response => response.json())
+            .then(response => {
+                console.log(response);
+                buildCards(response);
+                if (response.error) {
+                    console.log('problem!', response.error);
+                }
+
             });
     }
-    //testCSSVars();
+    getStorySubmission();
 
-   
 
-    function jsonToCssVariables(json, options) {
-        options = options || {}
-      
-        const offset = options.offset === undefined ? 0 : options.offset
-      
-        let count = 0
-        let output = `${options.element ? options.element : ':host'} {${options.pretty ? '\n' : ''}`
-      
-        for (let key in json) {
-          if (count >= offset) {
-            let value = json[key].value
-      
-            if (!isNaN(value) && value !== 0) {
-              value += options.unit === undefined ? 'px' : options.unit
-            }
-      
-            output += `${options.pretty ? '\t' : ''}--${key}: ${value};${options.pretty ? '\n' : ''}`
-          }
-      
-          count++
-        }
-      
-        output += '}'
-      
-        return output
-      }
+    function buildCards(cards) {
+
+        // <custom-card class="card" data-theme="light" data-elevation="flat" data-radius="none">
+        //     <span slot="headline">Headline</span>
+        //     <span slot="copy">Copy</span>
+        // </custom-card>
+
+        console.log(cards, " build");
+
+        cards.forEach(card => {
+
+            console.log(card.title, " single");
+            
+            const cardElm = document.createElement('custom-card');
+            cardElm.classList.add('card');
+
+            const headlineElm = document.createElement('span');
+            headlineElm.slot = "headline";
+            headlineElm.textContent = card.title;
+
+            const copyElm = document.createElement('span');
+            copyElm.slot = "copy";
+            copyElm.textContent = card.copy;
+
+            cardElm.append(headlineElm, copyElm);
+            
+            cardContainer.append(cardElm);
+
+        });
+    }
 
 
 });

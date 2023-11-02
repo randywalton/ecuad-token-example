@@ -9,10 +9,19 @@ body {
         .card {
             padding: var(--dark-theme-padding);
             background-color: var(--dark-theme-card-bg-color);
+            color: var(--dark-theme-card-text-color);
         }
 
         label {
             color: var(--dark-theme-text-color);
+        }
+
+        .site-header {
+            border: 1px solid var(--global-color-neutral-light);
+        }
+
+        .site-footer {
+            border: 1px solid var(--global-color-neutral-light);
         }
     }
 
@@ -23,31 +32,78 @@ body {
 
             padding: var(--light-theme-padding);
             background-color: var(--light-theme-card-bg-color);
+            color: var(--light-theme-card-text-color);
         }
         label {
             color: var(--light-theme-text-color);
         }
+
+        .site-header {
+            border: 1px solid var(--global-color-neutral-dark);
+        }
+
+        .site-footer {
+            border: 1px solid var(--global-color-neutral-dark);
+        }
     }
 }
 
+.card_container {
+    width: 100%;
+}
 
 //site layout and header (form input)
 .site-layout {
-    max-width: 400px;
-    width: 100%;
+    max-width: 12800px;
+    width: 90%;
     margin: 0 auto;
-    display: flex;
-    gap: 1rem 0;
+    margin-top: 1rem;
+    display: grid;
+    gap: 1rem;
 
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 4rem;
+
+
+
+    &.layout1 {
+        grid-template:
+            "header header header header"
+            "main main main main"
+            "footer footer footer footer"
+        ;
+    }
+
+    &.layout2 {
+        grid-template:
+            "header header main main"
+            "header header main main"
+            "header header footer footer"
+        ;
+    }
+
+    &.layout3 {
+        grid-template:
+            "header header . ."
+            ". main main main"
+            ". . footer footer"
+        ;
+    }
+
 }
+
 
 .site-header {
     padding: 1rem;
     text-align: center;
+    grid-area: header;
+    border: 1px solid var(--global-color-neutral-dark);
+}
 
-   
+.site-content {
+    grid-area: main;
+}
+
+.site-footer {
+    grid-area: footer;
+    border: 1px solid var(--global-color-neutral-dark);
+    padding: 1rem;
 }

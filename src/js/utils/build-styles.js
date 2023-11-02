@@ -10,7 +10,7 @@ let darkTheme = [];
 
 function constructCSSVars() {
     //get the token data
-    fetch('../data/tokens-v1.json')
+    fetch('../data/tokens.json')
         .then(res => res.json()) // the .json() method parses the JSON response into a JS object literal
         .then(data => {
             //send the data to be sorted
@@ -82,32 +82,6 @@ function sortData(data) {
         );
         
     }
-
-    // //create ref radius css vars
-    // for (let key in globalData['radius-scale']) {
-
-    //     radius.push(
-    //         `--global-radius-scale-${key}: ${globalData['radius-scale'][key].value}px;`
-    //     );
-        
-    // }
-
-    // //create ref elevation css vars
-    // for (let key in globalData['elevation-scale']) {
-
-    //     let x = globalData['elevation-scale'][key].value['x'];
-    //     let y = globalData['elevation-scale'][key].value['y'];
-    //     let blur = globalData['elevation-scale'][key].value['blur'];
-    //     let spread = globalData['elevation-scale'][key].value['spread'];
-    //     let color = setCSSVarName(globalData['elevation-scale'][key].value['color']);
-
-    //     elevation.push(
-    //         `--global-elevation-scale-${key}: ${x}px ${y}px ${blur}px ${spread}px var(--global-${color});`
-    //     );
-        
-    // }
-
-
 
     //create light-theme css vars
     for (let key in lightData) {

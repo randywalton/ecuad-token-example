@@ -28,20 +28,38 @@
     <!-- <div class="color-scale-block left"></div>
     <div class="color-scale-block right"></div> -->
 
-    <div class="site-layout">
+    <div class="site-layout layout3">
 
         <header id="site-header" class="site-header light">
-            <label for="theme-select">Choose a theme:</label>
 
-            <select name="themes" id="theme-select">
-                <option value="light">Light Theme</option>
-                <option value="dark">Dark Theme</option>
-            </select>
+            <h1>My Fancy Website!</h1>
+            <nav>
+                <label for="theme-select">Choose a theme:</label>
+
+                <select name="themes" id="theme-select">
+                    <option value="light">Light Theme</option>
+                    <option value="dark">Dark Theme</option>
+                </select>
+            </nav>
+            
         </header>
 
-        <p>Default Card</p>
 
-        <custom-card class="card" data-theme="light" data-elevation="flat" data-radius="none">
+        <main class="site-content">
+
+    
+            <section id="card_container" class="card_container">
+                <h2>Cards!</h2>
+                
+            </section>
+        </main>
+        
+
+        <footer class="site-footer">
+            <p>My Website Footer &#169; 2023</p>
+        </footer>
+
+         <!-- <custom-card class="card" data-theme="light" data-elevation="flat" data-radius="none">
             <span slot="headline">Headline</span>
             <span slot="copy">Copy</span>
         </custom-card>
@@ -65,7 +83,7 @@
         <custom-card class="card" data-theme="light" data-elevation="high" data-radius="large">
             <span slot="headline">More Breaking News!</span>
             <span slot="copy">A card with large radius & high elevation</span>
-        </custom-card>
+        </custom-card> -->
 
     </div>
 

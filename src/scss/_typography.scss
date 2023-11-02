@@ -1,5 +1,28 @@
 
+body {
+    font-family: var(-global-typeface-copy-family);
+    font-size: var(--global-fontSize-0);
+}
+
 
 p {
-    margin-bottom: 0;
+    margin: 0.4rem 0;
+}
+
+h1, h2, h3 {
+    font-family: var(-global-typeface-headline-family);
+    line-height: 1;
+    margin: 0.2rem 0;
+}
+
+h1 {
+    font-size: var(--global-fontSize-3); 
+}
+
+h2 {
+    font-size: var(--global-fontSize-2); 
+}
+
+h3 {
+    font-size: var(--global-fontSize-1); 
 }
