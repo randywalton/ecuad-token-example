@@ -52,6 +52,7 @@ body {
     max-width: 12800px;
     width: 90%;
     margin: 1rem auto;
+    margin-bottom:4rem;
     display: grid;
     gap: 1rem;
 
@@ -61,27 +62,27 @@ body {
     &.layout1 {
         grid-template:
             "header header header header"
-            "banner banner banner banner"
-            "main main main main"
-            "footer footer footer footer"
+            ". banner banner ."
+            ". main main ."
+            ". footer footer ."
         ;
     }
 
     &.layout2 {
         grid-template:
-            "header header . ." 
-            "banner banner main main" 
-            "banner banner main main" 
-            ". . footer footer"
+            "header . . ." 
+            "banner main main main" 
+            "banner main main main" 
+            ". footer footer footer"
         ;
     }
 
     &.layout3 {
         grid-template:
-            "header header header banner"
-            "header header header banner"
-            "main main main banner"
-            "footer footer footer ."
+            "header header banner banner"
+            "main main banner banner"
+            "main main footer footer"
+            ". . footer footer"
         ;
     }
 
@@ -97,6 +98,11 @@ body {
 
 .banner {
     height: 400px;
+
+    background-image: url(../../assets/images/brian-despain-art.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     img {
         width: 100%;
@@ -119,4 +125,11 @@ body {
     grid-area: footer;
     border: 1px solid var(--global-color-neutral-dark);
     padding: 1rem;
+
+    form {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }

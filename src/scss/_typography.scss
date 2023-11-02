@@ -26,3 +26,17 @@ h2 {
 h3 {
     font-size: var(--global-fontSize-1); 
 }
+
+
+.alert {
+    display: none;
+
+    &.error {
+        color: rgb(155, 5, 5);
+    }
+    
+    &.sucess {
+        color: rgb(4, 143, 15);
+    }
+
+}

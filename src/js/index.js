@@ -14,7 +14,30 @@ document.addEventListener('DOMContentLoaded', (e) => {
     const themeSelect = document.getElementById('theme-select');
     const siteHeader = document.getElementById('site-header');
     const cardContainer = document.getElementById('card_container');
+    const submiBtn = document.getElementById('submit_btn');
+    const message = document.getElementById('message');
+    const title = document.getElementById('title');
+    const alert = document.getElementById('alert');
     const body = document.getElementsByTagName('body')[0];
+
+    submiBtn.addEventListener('click' , (e) => {
+        e.preventDefault();
+        alert.innerHTML = "";
+        if (title.value !== '' && message.value !== '') {
+            postArtcile(title.value, message.value);
+            alert.style.display = "block";
+            alert.classList.remove('error');
+            alert.classList.add('sucess');
+            alert.innerHTML = "Message submitted!";
+        } else {
+            alert.style.display = "block";
+            alert.classList.remove('sucess');
+            alert.classList.add('error');
+            alert.innerHTML = "Fill in both title and message!";
+        }
+        //console.log(title.value, message.value);
+        //postArtcile(title.value, message.value);
+    });
 
     themeSelect.addEventListener('change' , (e) => {
 
@@ -47,8 +70,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     });
 
-
-     const cmsPath = 'https://randywalton.ca/ecuad/cms/api/content/items/exampleArticles';
+    const cmsPathPost = 'https://randywalton.ca/ecuad/cms/api/content/item/exampleArticles';
+    const cmsPathGet = 'https://randywalton.ca/ecuad/cms/api/content/items/exampleArticles';
     const publicKey = 'API-9c67173d397298b9451f535609fb708214598b83';
 
     function getStorySubmission() {
@@ -59,7 +82,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
             
 
-        fetch(cmsPath, {
+        fetch(cmsPathGet, {
             method: 'GET',
             headers: {
                 "api-key": publicKey
@@ -96,11 +119,11 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
             const headlineElm = document.createElement('span');
             headlineElm.slot = "headline";
-            headlineElm.textContent = card.title;
+            headlineElm.innerHTML = card.title;
 
             const copyElm = document.createElement('span');
             copyElm.slot = "copy";
-            copyElm.textContent = card.copy;
+            copyElm.innerHTML = card.copy;
 
             cardElm.append(headlineElm, copyElm);
             
@@ -108,6 +131,60 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
         });
     }
+
+
+
+    function postArtcile(title, copy) {
+
+        let sanitizeCopy = sanitizeHTML(copy);
+        let sanitizeTitle = sanitizeHTML(title);
+
+        fetch(cmsPathPost, {
+            method: 'POST',
+            headers: {
+                "api-key": publicKey,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                data: {
+                    "title": `${sanitizeTitle}`,
+                    "copy": `${sanitizeCopy}`,
+                    "_state": 1 //do not publish!
+                }
+            })
+        })
+            .then(response => response.json())
+            .then(response => {
+                console.log(response);
+
+                // if (!response.error) {
+                //     //hide form and show thank you, continue to clouds
+                //     this.showThankYou();
+                //     //turn off spinner
+                //     this.submitBtn.querySelector('.spinner').style.display = 'none';
+
+                // } else {
+                //     this.error('Error, can not submit your story, please try again.');
+                //     //turn off spinner
+                //     this.submitBtn.querySelector('.spinner').style.display = 'none';
+                //     //activate the submit button again
+                //     this.submitBtn.classList.remove('disable');
+                // }
+
+            })
+            .catch(error => {
+                console.log('problem!', error);
+            });
+
+            
+    }
+
+    function sanitizeHTML(str) {
+        return str.replace(/[^\w. ]/gi, function (c) {
+            return '&#' + c.charCodeAt(0) + ';';
+        });
+    }
+
 
 
 });

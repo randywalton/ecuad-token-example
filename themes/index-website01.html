@@ -46,17 +46,30 @@
 
     
             <section id="card_container" class="card_container">
-                <h2>Cards!</h2>
+                <h2>Posted Cards!</h2>
             </section>
         </main>
 
         <div class="banner">
-            <img src="../assets/images/brian-despain-art.jpg" alt="brian despain art" srcset="">
+           
         </div>
         
 
         <footer class="site-footer">
             <p>My Website Footer &#169; 2023</p>
+
+            <form action="#">
+
+                <h3>Submit a post</h3>
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" cols="20" rows="3"></textarea>
+
+                <input id="submit_btn" type="submit" value="Post">
+
+                <p id="alert" class="alert"></p>
+            </form>
         </footer>
     </div>
 
