@@ -95,7 +95,7 @@
           "type": "color"
         },
         "primary50": {
-          "value": "orange",
+          "value": "#8300d2",
           "type": "color"
         },
         "primary40": {
@@ -116,20 +116,50 @@
         }
       },
       "neutral": {
-        "neutral10": {
+        "neutral-dark": {
           "value": "#000000",
           "type": "color"
         },
-        "neutral20": {
+        "neutral-light": {
           "value": "#ffffff",
           "type": "color"
         }
       }
     }
   },
-  "Brand": {
-    "primary": {
-      "value": "{ref-scale.primary.primary40}",
+  "light": {
+    "bg-color": {
+      "value": "{scales.primary.primary60}",
+      "type": "color"
+    },
+    "text-color": {
+      "value": "{scales.neutral.neutral-dark}",
+      "type": "color"
+    },
+    "card-bg-color": {
+      "value": "{scales.primary.primary60}",
+      "type": "color"
+    },
+    "card-text-color": {
+      "value": "{scales.neutral.neutral-light}",
+      "type": "color"
+    }
+  },
+  "dark": {
+    "bg-color": {
+      "value": "{scales.primary.primary50}",
+      "type": "color"
+    },
+    "text-color": {
+      "value": "{scales.neutral.neutral-light}",
+      "type": "color"
+    },
+    "card-bg-color": {
+      "value": "{scales.primary.primary20}",
+      "type": "color"
+    },
+    "card-text-color": {
+      "value": "{scales.neutral.neutral-dark}",
       "type": "color"
     }
   },
@@ -137,7 +167,8 @@
   "$metadata": {
     "tokenSetOrder": [
       "global",
-      "Brand"
+      "light",
+      "dark"
     ]
   }
 }
