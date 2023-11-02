@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website 02: Design Token & CMS Example</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&family=Source+Serif+Pro:wght@300;400;600&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="../build/css/styles.css">
+
+    <template id="custom-card-template">
+        <h2 class="headline">
+            <slot name="headline">Headline</slot>
+        </h2>
+        <p class="copy">
+            <slot name="copy">Copy</slot>
+        </p>
+    </template>
+
+</head>
+
+<body class="light">
+
+    <div class="site-layout layout2">
+
+        <header id="site-header" class="site-header light">
+
+            <h1>My Awesome Website!</h1>
+            <nav>
+                <label for="theme-select">Choose a theme:</label>
+
+                <select name="themes" id="theme-select">
+                    <option value="light">Light Theme</option>
+                    <option value="dark">Dark Theme</option>
+                </select>
+            </nav>
+            
+        </header>
+
+
+        <main class="site-content">
+
+    
+            <section id="card_container" class="card_container">
+                <h2>Cards!</h2>
+            </section>
+        </main>
+
+        <div class="banner">
+            <img src="../assets/images/brian-despain-art.jpg" alt="brian despain art" srcset="">
+        </div>
+        
+
+        <footer class="site-footer">
+            <p>My Website Footer &#169; 2023</p>
+        </footer>
+    </div>
+
+ 
+
+
+    <script src="../build/js/index-min.js"></script>
+</body>
+</html>
