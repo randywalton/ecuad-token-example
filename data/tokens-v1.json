@@ -88,7 +88,7 @@
         "type": "dimension"
       }
     },
-    "ref-scale": {
+    "scales": {
       "primary": {
         "primary60": {
           "value": "#580083",
@@ -127,9 +127,39 @@
       }
     }
   },
-  "Brand": {
-    "primary": {
-      "value": "{ref-scale.primary.primary40}",
+  "light": {
+    "bg-color": {
+      "value": "{scales.primary.primary60}",
+      "type": "color"
+    },
+    "text-color": {
+      "value": "{scales.neutral.neutral-dark}",
+      "type": "color"
+    },
+    "card-bg-color": {
+      "value": "{scales.primary.primary60}",
+      "type": "color"
+    },
+    "card-text-color": {
+      "value": "{scales.neutral.neutral-light}",
+      "type": "color"
+    }
+  },
+  "dark": {
+    "bg-color": {
+      "value": "{scales.primary.primary50}",
+      "type": "color"
+    },
+    "text-color": {
+      "value": "{scales.neutral.neutral-light}",
+      "type": "color"
+    },
+    "card-bg-color": {
+      "value": "{scales.primary.primary20}",
+      "type": "color"
+    },
+    "card-text-color": {
+      "value": "{scales.neutral.neutral-dark}",
       "type": "color"
     }
   },
@@ -137,7 +167,8 @@
   "$metadata": {
     "tokenSetOrder": [
       "global",
-      "Brand"
+      "light",
+      "dark"
     ]
   }
 }
