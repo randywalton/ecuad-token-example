@@ -129,7 +129,7 @@
   },
   "light": {
     "bg-color": {
-      "value": "{scales.primary.primary20}",
+      "value": "{scales.neutral.neutral-dark}",
       "type": "color"
     },
     "text-color": {
