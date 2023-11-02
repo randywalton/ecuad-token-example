@@ -129,7 +129,7 @@
   },
   "light": {
     "bg-color": {
-      "value": "{scales.primary.primary60}",
+      "value": "{scales.primary.primary20}",
       "type": "color"
     },
     "text-color": {
@@ -147,7 +147,7 @@
   },
   "dark": {
     "bg-color": {
-      "value": "{scales.primary.primary50}",
+      "value": "{scales.primary.primary60}",
       "type": "color"
     },
     "text-color": {
