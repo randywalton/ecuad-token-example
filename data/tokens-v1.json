@@ -125,6 +125,20 @@
           "type": "color"
         }
       }
+    },
+    "spacing": {
+      "small": {
+        "value": "8px",
+        "type": "spacing"
+      },
+      "medium": {
+        "value": "16px",
+        "type": "spacing"
+      },
+      "large": {
+        "value": "32px",
+        "type": "spacing"
+      }
     }
   },
   "light": {
