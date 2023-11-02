@@ -1,8 +1,8 @@
 {
   "global": {
     "fontFamilies": {
-      "source-sans-pro": {
-        "value": "Source Sans Pro",
+      "serif": {
+        "value": "Serif",
         "type": "fontFamilies"
       }
     },
@@ -43,7 +43,7 @@
     "typeface": {
       "headline": {
         "value": {
-          "fontFamily": "{fontFamilies.source-sans-pro}",
+          "fontFamily": "{fontFamilies.serif}",
           "fontWeight": "{fontWeights.source-sans-pro-0}",
           "lineHeight": "{lineHeights.0}",
           "fontSize": "{fontSize.1}",
@@ -57,7 +57,7 @@
       },
       "copy": {
         "value": {
-          "fontFamily": "{fontFamilies.source-sans-pro}",
+          "fontFamily": "{fontFamilies.serif}",
           "fontWeight": "{fontWeights.source-sans-pro-0}",
           "lineHeight": "{lineHeights.0}",
           "fontSize": "{fontSize.0}",
