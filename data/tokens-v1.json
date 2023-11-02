@@ -158,7 +158,7 @@
       "value": "{color.neutral.light}",
       "type": "color"
     },
-    "test": {
+    "padding": {
       "value": "{spacing.large}",
       "type": "spacing"
     }
@@ -179,6 +179,10 @@
     "card-text-color": {
       "value": "{color.neutral.dark}",
       "type": "color"
+    },
+    "padding": {
+      "value": "{spacing.small}",
+      "type": "spacing"
     }
   },
   "$themes": [],
