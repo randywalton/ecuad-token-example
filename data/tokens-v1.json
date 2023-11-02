@@ -128,15 +128,15 @@
     },
     "spacing": {
       "small": {
-        "value": "8px",
+        "value": "8",
         "type": "spacing"
       },
       "medium": {
-        "value": "16px",
+        "value": "16",
         "type": "spacing"
       },
       "large": {
-        "value": "32px",
+        "value": "32",
         "type": "spacing"
       }
     }
