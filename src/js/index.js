@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             })
             .then(response => response.json())
             .then(response => {
-                console.log(response);
+                //console.log(response);
                 buildCards(response);
                 if (response.error) {
                     console.log('problem!', response.error);
@@ -108,11 +108,11 @@ document.addEventListener('DOMContentLoaded', (e) => {
         //     <span slot="copy">Copy</span>
         // </custom-card>
 
-        console.log(cards, " build");
+        //console.log(cards, " build");
 
         cards.forEach(card => {
 
-            console.log(card.title, " single");
+            //console.log(card.title, " single");
             
             const cardElm = document.createElement('custom-card');
             cardElm.classList.add('card');
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         })
             .then(response => response.json())
             .then(response => {
-                console.log(response);
+                //console.log(response);
 
                 // if (!response.error) {
                 //     //hide form and show thank you, continue to clouds

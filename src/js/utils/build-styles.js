@@ -1,6 +1,7 @@
 
 // Arrays for token sets
-let primary = [];
+let purple = [];
+let yellow = [];
 let neutral = [];
 let fontSizes = [];
 let typography = [];
@@ -28,9 +29,15 @@ function sortData(data) {
    
 
     //create ref primary css vars
-    for (let key in globalData['color']['primary']) {
-        primary.push(
-            `--global-color-primary-${key}: ${globalData['color']['primary'][key].value};`
+    for (let key in globalData['color']['purple']) {
+        purple.push(
+            `--global-color-purple-${key}: ${globalData['color']['purple'][key].value};`
+        );
+    }
+
+    for (let key in globalData['color']['yellow']) {
+        purple.push(
+            `--global-color-yellow-${key}: ${globalData['color']['yellow'][key].value};`
         );
     }
 
@@ -121,7 +128,8 @@ function createStyleSheet() {
         `
         :root {
             /* Color */
-            ${primary.join(' ')}
+            ${purple.join(' ')}
+            ${yellow.join(' ')}
             ${neutral.join(' ')}
             /* Type */
             ${fontSizes.join(' ')}
