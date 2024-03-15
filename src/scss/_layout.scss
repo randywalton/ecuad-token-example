@@ -3,41 +3,57 @@ body {
 
     //light - dark control
     &.dark {
-        background-color: var(--dark-theme-bg-color);
-        color: var(--dark-theme-text-color);
+        background-color: var(--dark-theme-secondary);
+        color: var(--dark-theme-on-secondary);
 
         .card {
             padding: var(--dark-theme-padding);
-            background-color: var(--dark-theme-card-bg-color);
-            color: var(--dark-theme-card-text-color);
+            background-color: var(--dark-theme-primary);
+            color: var(--dark-theme-on-primary);
         }
 
         label {
-            color: var(--dark-theme-text-color);
+            color: var(--dark-theme-on-secondary);
         }
 
         .site-header, .site-content, .site-footer {
             border: 1px solid var(--global-color-neutral-light);
+            padding: var(--global-spacing-small);
         }
 
-  
+        input[type=submit], select {
+            background-color: var(--dark-theme-primary);
+            color: var(--dark-theme-on-primary);
+            box-shadow: none;
+            border: 0;
+            padding: var(--global-spacing-small);
+        }
     }
 
     &.light {
-        background-color: var(--light-theme-bg-color);
-        color: var(--light-theme-text-color);
+        background-color: var(--light-theme-secondary);
+        color: var(--light-theme-on-secondary);
         .card {
 
             padding: var(--light-theme-padding);
-            background-color: var(--light-theme-card-bg-color);
-            color: var(--light-theme-card-text-color);
+            background-color: var(--light-theme-primary);
+            color: var(--light-theme-on-primary);
         }
         label {
-            color: var(--light-theme-text-color);
+            color: var(--light-theme-primary);
         }
 
         .site-header, .site-content, .site-footer {
             border: 1px solid var(--global-color-neutral-dark);
+            padding: var(--global-spacing-large);
+        }
+
+        input[type=submit], select {
+            background-color: var(--light-theme-primary);
+            color: var(--light-theme-on-primary);
+            box-shadow: none;
+            border: 0;
+            padding: var(--global-spacing-medium);
         }
 
     }
@@ -49,7 +65,7 @@ body {
 
 //site layout and header (form input)
 .site-layout {
-    max-width: 12800px;
+    max-width: 1280px;
     width: 90%;
     margin: 1rem auto;
     margin-bottom:4rem;
