@@ -75,12 +75,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     const publicKey = 'API-9c67173d397298b9451f535609fb708214598b83';
 
     function getStorySubmission() {
-        // fetch('https://randywalton.ca/temp/testing-headless/api/content/item/get/test?token=API-c4f4deeb91424bff8ad440855223d87e1db9a0fd')
-        //     .then(collections => collections.json())
-        //     .then(collections => console.log(collections));
-
-
-            
+       
 
         fetch(cmsPathGet, {
             method: 'GET',

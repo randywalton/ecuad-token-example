@@ -11,7 +11,7 @@ let darkTheme = [];
 
 function constructCSSVars() {
     //get the token data
-    fetch('../data/tokens.json')
+    fetch('./data/tokens.json')
         .then(res => res.json()) // the .json() method parses the JSON response into a JS object literal
         .then(data => {
             //send the data to be sorted
